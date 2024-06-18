@@ -1,0 +1,67 @@
+@use '../base/variables' as v;
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    font-size: 1.6rem;
+    background-color:  v.$celeste;
+    font-family: v.$fuente;
+    color: v.$grisOscuro;
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+}
+
+main{
+    background-color: v.$blanco;
+    width: 40rem;
+    max-width: 100%;
+    height: 70vh;
+    border: 2px solid v.$grisClaro;
+    border-radius: 1rem;
+    padding: .8rem;
+    margin-bottom: 1.6rem;    
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -webkit-box-shadow: 0px 0px 27px 0px rgba(0,0,0,0.47);
+    -moz-box-shadow: 0px 0px 27px 0px rgba(0,0,0,0.47);
+    box-shadow: 0px 0px 27px 0px rgba(0,0,0,0.47);
+    @media (max-width: 450px) {
+        width: 95vw;
+    }
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+small{
+    font-size: 1rem;
+    color: v.$grisOscuro;
+    margin: 0 auto;
+    max-width: 26rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+button{
+    background-color: v.$blanco;
+    border: 2px solid rgb(95, 95, 207);
+    border-radius: 9rem;
+    cursor: pointer;
+    background-color: rgb(110, 110, 221);
+    color: v.$blanco;
+    padding: 1rem;
+    &:disabled{
+        background-color: rgb(155, 155, 209);
+        border: 2px solid rgb(130, 130, 190);
+    }
+}

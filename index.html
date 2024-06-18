@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <main>        
+        <ul><!-- Lista de mensajes -->          
+        </ul>
+    </main>    
+    <form><!-- Formulario donde le escribiremos al bot -->
+        <input type="text" name="message" placeholder="Escribe tu mensaje">
+        <button disabled>Enviar</button>
+    </form>
+    <small>&nbsp;</small>
+    <!-- Plantilla que se usa para mostrar los mensajes -->
+    <template id="message-template"> 
+        <li class="message">
+            <span></span>
+            <p></p>
+        </li>
+    </template>
+    <div class="modal">
+        <div class="selector-modelo">
+            <h2>Selecciona el modelo de inteligencia artificial</h2>
+                <select name="modelSelect" id="modelSelect">
+                    <option value="gemma-2b-it-q4f32_1-MLC">Gemma-2b MB 1750 VRAM</option>
+                    <option value="stablelm-2-zephyr-1_6b-q4f32_1-MLC">Stablelm-2-zephyr-1 6b 2999 MB VRAM</option>     
+                    <option value="Llama-3-8B-Instruct-q4f16_1-MLC-1k">Llama-3-8B 4598 MB VRAM</option>                  
+                </select>  
+            <p><span>Atención:</span> Modelos mas avanzado requerirán mas VRAM</p>
+            <button id="btnComenzar">Comenzar</button>        
+        </div>
+        <div class="no-webgpu hidden">
+            <h2>:(</h2>
+            <p>WebGPU no es compatible en este navegador o no se ha detectado tu GPU.</p>
+        </div>
+        <div class="loading hidden">
+            <div class="loader"></div>
+            <p id="loading-message"></p>
+        </div>
+        
+    </div>
+</body>
+<!-- Utilizo type="module" para hacer uso de import y export -->
+<script src="js/app.js" type="module"></script>
+</html>

@@ -1,0 +1,210 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  background-color: rgb(155, 155, 209);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #292929;
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+}
+
+main {
+  background-color: #e9eef0;
+  width: 40rem;
+  max-width: 100%;
+  height: 70vh;
+  border: 2px solid #c7c1c1;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  margin-bottom: 1.6rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+}
+@media (max-width: 450px) {
+  main {
+    width: 95vw;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+small {
+  font-size: 1rem;
+  color: #292929;
+  margin: 0 auto;
+  max-width: 26rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+button {
+  background-color: #e9eef0;
+  border: 2px solid rgb(95, 95, 207);
+  border-radius: 9rem;
+  cursor: pointer;
+  background-color: rgb(110, 110, 221);
+  color: #e9eef0;
+  padding: 1rem;
+}
+button:disabled {
+  background-color: rgb(155, 155, 209);
+  border: 2px solid rgb(130, 130, 190);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.8rem;
+}
+.message span {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.message p {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  white-space: pre-line;
+}
+.message.user {
+  align-self: flex-end;
+  align-items: flex-end;
+  border-radius: 1rem;
+}
+.message.user span, .message.user p {
+  background-color: rgb(146, 205, 219);
+}
+.message.bot {
+  align-self: flex-start;
+  border-radius: 1rem;
+}
+.message.bot span, .message.bot p {
+  background-color: rgb(137, 199, 152);
+}
+
+form {
+  display: flex;
+}
+form input {
+  flex-grow: 1;
+  padding: 0.8rem;
+  border: 2px solid #c7c1c1;
+  border-radius: 9rem;
+  margin-right: 1rem;
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+}
+form button {
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+}
+
+.modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.671);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-webgpu, .selector-modelo {
+  width: 100%;
+  max-width: 44rem;
+  background-color: #e9eef0;
+  border-radius: 1rem;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.47);
+  color: #292929;
+  text-align: center;
+}
+
+.no-webgpu h2 {
+  font-size: 8rem;
+  color: red;
+}
+.no-webgpu p {
+  font-weight: bold;
+}
+
+.selector-modelo {
+  flex-direction: column;
+}
+.selector-modelo span {
+  color: rgb(204, 83, 35);
+}
+.selector-modelo select {
+  padding: 1rem;
+  border: 2px solid #979797;
+  border-radius: 3rem;
+  width: 100%;
+}
+.selector-modelo button {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.loading p {
+  color: white;
+  max-width: 70rem;
+}
+.loading .loader {
+  width: 100px;
+  height: 100px;
+  border: 10px solid white;
+  border-left: 10px solid blue;
+  border-radius: 9rem;
+  animation: girar 2s linear infinite;
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}

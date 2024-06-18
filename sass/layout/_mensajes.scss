@@ -1,0 +1,40 @@
+@use '../base/variables' as v;
+.message{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: .5rem 0;
+    padding: .5rem .8rem;
+    span{
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    p{
+        margin: 0;
+        padding: 1rem;
+        border-radius: 1rem;
+        white-space: pre-line;
+    }
+    &.user{
+        align-self: flex-end;
+        align-items: flex-end;        
+        border-radius: 1rem;
+        span,p{
+            background-color: rgb(146, 205, 219);
+        }
+    }
+    &.bot{
+        align-self: flex-start;        
+        border-radius: 1rem;
+        span,p{
+            background-color: rgb(137, 199, 152);
+        }
+    }
+}
